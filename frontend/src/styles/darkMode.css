@@ -1,0 +1,29 @@
+/* Dark Mode Styles */
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #1f1f1f;
+  --card-foreground: #ffffff;
+  --muted: #2a2a2a;
+  --muted-foreground: #a0a0a0;
+  --accent: #3b82f6;
+  --border: #333333;
+}
+
+body.dark {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+.bg-background { background-color: var(--background); }
+.bg-card { background-color: var(--card); }
+.bg-muted { background-color: var(--muted); }
+
+.text-foreground { color: var(--foreground); }
+.text-card-foreground { color: var(--card-foreground); }
+.text-muted-foreground { color: var(--muted-foreground); }
+
+.border-border { border-color: var(--border); }
+.bg-accent { background-color: var(--accent); }
+.text-accent { color: var(--accent); }
+.text-accent-foreground { color: #ffffff; }

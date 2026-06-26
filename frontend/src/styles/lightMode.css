@@ -1,0 +1,16 @@
+/* Light Mode Styles */
+:root.light {
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #f5f5f5;
+  --card-foreground: #000000;
+  --muted: #e5e5e5;
+  --muted-foreground: #666666;
+  --accent: #3b82f6;
+  --border: #d0d0d0;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
