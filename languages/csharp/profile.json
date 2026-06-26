@@ -1,0 +1,52 @@
+{
+  "id": "csharp",
+  "name": "C#",
+  "extensions": [".cs", ".csproj", ".sln"],
+  "packageManagers": ["nuget", "paket"],
+  "buildSystems": ["msbuild", "dotnet"],
+  "configFiles": [
+    "*.csproj",
+    "packages.config",
+    "Directory.Build.props",
+    "appsettings.json",
+    ".sln"
+  ],
+  "frameworks": [
+    {
+      "name": ".NET 8.0",
+      "configFile": "*.csproj",
+      "buildCommand": "dotnet build",
+      "detectPatterns": ["<TargetFramework>net8.0</TargetFramework>"]
+    },
+    {
+      "name": ".NET 6.0",
+      "configFile": "*.csproj",
+      "buildCommand": "dotnet build",
+      "detectPatterns": ["<TargetFramework>net6.0</TargetFramework>"]
+    },
+    {
+      "name": ".NET Framework 4.8",
+      "configFile": "*.csproj",
+      "buildCommand": "msbuild",
+      "detectPatterns": ["<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>"]
+    }
+  ],
+  "runtimes": [
+    {
+      "name": ".NET SDK",
+      "version": "8.0",
+      "installScript": "powershell -Command \"winget install Microsoft.DotNet.SDK.8\"",
+      "verifyCommand": "dotnet --version"
+    }
+  ],
+  "tools": ["Visual Studio", "Visual Studio Code", "Rider"],
+  "minimalDependencies": [],
+  "recommendedDependencies": [
+    {
+      "name": "Newtonsoft.Json",
+      "version": "13.0.3",
+      "required": false,
+      "installCommand": "dotnet add package Newtonsoft.Json"
+    }
+  ]
+}

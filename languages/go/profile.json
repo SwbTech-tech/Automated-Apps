@@ -1,0 +1,20 @@
+{
+  "id": "go",
+  "name": "Go",
+  "extensions": [".go"],
+  "packageManagers": ["go modules"],
+  "buildSystems": ["go build"],
+  "configFiles": ["go.mod", "go.sum", "Makefile"],
+  "frameworks": [],
+  "runtimes": [
+    {
+      "name": "Go",
+      "version": "1.21",
+      "installScript": "powershell -Command \"winget install GoLang.Go\"",
+      "verifyCommand": "go version"
+    }
+  ],
+  "tools": ["Visual Studio Code", "GoLand", "Sublime Text"],
+  "minimalDependencies": [],
+  "recommendedDependencies": []
+}

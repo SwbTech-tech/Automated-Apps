@@ -1,0 +1,48 @@
+{
+  "id": "python",
+  "name": "Python",
+  "extensions": [".py", ".pyw"],
+  "packageManagers": ["pip", "poetry", "pipenv"],
+  "buildSystems": ["pip", "setuptools", "poetry"],
+  "configFiles": [
+    "requirements.txt",
+    "setup.py",
+    "pyproject.toml",
+    "Pipfile",
+    "Pipfile.lock",
+    "poetry.lock",
+    "environment.yml",
+    "tox.ini"
+  ],
+  "frameworks": [
+    {
+      "name": "Django",
+      "configFile": "requirements.txt",
+      "buildCommand": "python manage.py runserver",
+      "detectPatterns": ["django"]
+    },
+    {
+      "name": "Flask",
+      "configFile": "requirements.txt",
+      "buildCommand": "python -m flask run",
+      "detectPatterns": ["flask"]
+    },
+    {
+      "name": "FastAPI",
+      "configFile": "requirements.txt",
+      "buildCommand": "uvicorn main:app",
+      "detectPatterns": ["fastapi"]
+    }
+  ],
+  "runtimes": [
+    {
+      "name": "Python 3.11",
+      "version": "3.11",
+      "installScript": "powershell -Command \"winget install Python.Python.3.11\"",
+      "verifyCommand": "python --version"
+    }
+  ],
+  "tools": ["PyCharm", "Visual Studio Code", "Anaconda"],
+  "minimalDependencies": [],
+  "recommendedDependencies": []
+}

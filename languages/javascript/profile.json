@@ -1,0 +1,55 @@
+{
+  "id": "javascript",
+  "name": "JavaScript/TypeScript",
+  "extensions": [".js", ".jsx", ".ts", ".tsx", ".mjs"],
+  "packageManagers": ["npm", "yarn", "pnpm"],
+  "buildSystems": ["npm", "webpack", "vite", "parcel", "esbuild"],
+  "configFiles": [
+    "package.json",
+    "package-lock.json",
+    "yarn.lock",
+    "pnpm-lock.yaml",
+    "tsconfig.json",
+    "webpack.config.js",
+    "vite.config.ts",
+    ".eslintrc",
+    "babel.config.js"
+  ],
+  "frameworks": [
+    {
+      "name": "React",
+      "configFile": "package.json",
+      "buildCommand": "npm run build",
+      "detectPatterns": ["react", "react-dom"]
+    },
+    {
+      "name": "Vue",
+      "configFile": "package.json",
+      "buildCommand": "npm run build",
+      "detectPatterns": ["vue"]
+    },
+    {
+      "name": "Angular",
+      "configFile": "package.json",
+      "buildCommand": "ng build",
+      "detectPatterns": ["@angular/core"]
+    },
+    {
+      "name": "Express.js",
+      "configFile": "package.json",
+      "buildCommand": "npm start",
+      "detectPatterns": ["express"]
+    }
+  ],
+  "runtimes": [
+    {
+      "name": "Node.js",
+      "version": "18.0",
+      "installScript": "powershell -Command \"winget install OpenJS.NodeJS\"",
+      "verifyCommand": "node --version"
+    }
+  ],
+  "tools": ["Visual Studio Code", "WebStorm", "Sublime Text"],
+  "minimalDependencies": [],
+  "recommendedDependencies": []
+}

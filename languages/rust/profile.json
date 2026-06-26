@@ -1,0 +1,27 @@
+{
+  "id": "rust",
+  "name": "Rust",
+  "extensions": [".rs"],
+  "packageManagers": ["cargo"],
+  "buildSystems": ["cargo"],
+  "configFiles": ["Cargo.toml", "Cargo.lock"],
+  "frameworks": [
+    {
+      "name": "Tokio",
+      "configFile": "Cargo.toml",
+      "buildCommand": "cargo build --release",
+      "detectPatterns": ["tokio"]
+    }
+  ],
+  "runtimes": [
+    {
+      "name": "Rust",
+      "version": "latest",
+      "installScript": "powershell -Command \"winget install Rustlang.Rust.GNU\"",
+      "verifyCommand": "rustc --version"
+    }
+  ],
+  "tools": ["Visual Studio Code", "CLion", "Sublime Text"],
+  "minimalDependencies": [],
+  "recommendedDependencies": []
+}

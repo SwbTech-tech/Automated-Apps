@@ -1,0 +1,46 @@
+{
+  "id": "java",
+  "name": "Java",
+  "extensions": [".java", ".jar"],
+  "packageManagers": ["maven", "gradle"],
+  "buildSystems": ["maven", "gradle"],
+  "configFiles": [
+    "pom.xml",
+    "build.gradle",
+    "build.gradle.kts",
+    "settings.gradle",
+    ".classpath",
+    "build.properties"
+  ],
+  "frameworks": [
+    {
+      "name": "Spring Boot",
+      "configFile": "pom.xml",
+      "buildCommand": "mvn spring-boot:run",
+      "detectPatterns": ["spring-boot"]
+    },
+    {
+      "name": "Maven",
+      "configFile": "pom.xml",
+      "buildCommand": "mvn clean install",
+      "detectPatterns": ["<project>"]
+    },
+    {
+      "name": "Gradle",
+      "configFile": "build.gradle",
+      "buildCommand": "gradle build",
+      "detectPatterns": ["plugins", "dependencies"]
+    }
+  ],
+  "runtimes": [
+    {
+      "name": "JDK 21",
+      "version": "21",
+      "installScript": "powershell -Command \"winget install Oracle.JDK.21\"",
+      "verifyCommand": "java -version"
+    }
+  ],
+  "tools": ["IntelliJ IDEA", "Eclipse", "NetBeans"],
+  "minimalDependencies": [],
+  "recommendedDependencies": []
+}

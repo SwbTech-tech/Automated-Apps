@@ -1,0 +1,40 @@
+{
+  "id": "cpp",
+  "name": "C++",
+  "extensions": [".cpp", ".cc", ".cxx", ".h", ".hpp", ".c"],
+  "packageManagers": ["vcpkg", "conan"],
+  "buildSystems": ["cmake", "make", "msvc"],
+  "configFiles": [
+    "CMakeLists.txt",
+    "Makefile",
+    "*.vcxproj",
+    ".sln",
+    "conanfile.txt",
+    "conanfile.py"
+  ],
+  "frameworks": [
+    {
+      "name": "CMake",
+      "configFile": "CMakeLists.txt",
+      "buildCommand": "cmake --build . --config Release",
+      "detectPatterns": ["cmake_minimum_required", "project("]
+    }
+  ],
+  "runtimes": [
+    {
+      "name": "MSVC",
+      "version": "143",
+      "installScript": "powershell -Command \"winget install Microsoft.VisualStudio.Community\"",
+      "verifyCommand": "cl.exe /?"
+    },
+    {
+      "name": "GCC",
+      "version": "13",
+      "installScript": "powershell -Command \"winget install mingw-w64\"",
+      "verifyCommand": "g++ --version"
+    }
+  ],
+  "tools": ["Visual Studio", "CLion", "Code::Blocks"],
+  "minimalDependencies": [],
+  "recommendedDependencies": []
+}
