@@ -1,0 +1,39 @@
+appId: com.swbtech.automated-apps
+productName: Automated Apps
+files:
+  - dist
+  - node_modules
+  - package.json
+
+directories:
+  buildResources: assets
+  output: out
+
+win:
+  target:
+    - nsis
+    - portable
+  certificateFile: null
+  certificatePassword: null
+  signingHashAlgorithms:
+    - sha256
+  sign: ./customSign.js
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Automated Apps
+
+mac:
+  target:
+    - dmg
+    - zip
+  category: public.app-category.developer-tools
+
+linux:
+  target:
+    - AppImage
+    - deb
+  category: Development
